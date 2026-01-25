@@ -1,0 +1,14 @@
+name: Hello World Action
+
+on: [workflow_dispatch]  # Lets you trigger it manually
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest  # Free Linux computer GitHub provides
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: 23f2005627@ds.study.iitm.ac.in  # Your required step name!
+        run: echo "Hello from my GitHub Action! Email step complete."
