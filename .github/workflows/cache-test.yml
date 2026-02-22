@@ -3,34 +3,25 @@ name: CI with Dependency Cache
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Cache dependencies
+      - name: Create dummy cache folder
+        run: mkdir -p .cache
+
       - name: Prime Cache (cache-da9d1f5)
         id: prime-cache-da9d1f5
         uses: actions/cache@v4
         with:
-          path: |
-            ~/.npm  # or ~/.cache/pip for Python, adjust to your language
+          path: .cache
           key: cache-da9d1f5
-          restore-keys: |
-            cache-da9d1f5
+          restore-keys: cache-da9d1f5
 
-      # Echo result
       - name: Echo cache result
         run: echo "Cache hit/miss: ${{ steps.prime-cache-da9d1f5.outputs.cache-hit }}"
-
-      # Install dependencies (example)
-      - name: Install dependencies
-        run: |
-          npm install  # or pip install -r requirements.txt
