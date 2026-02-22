@@ -3,18 +3,23 @@ name: CI with Dependency Cache
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Create dummy cache folder
+      # Step 2: Create a folder that will definitely exist
+      - name: Create cache folder
         run: mkdir -p .cache
 
+      # Step 3: Prime the cache
       - name: Prime Cache (cache-da9d1f5)
         id: prime-cache-da9d1f5
         uses: actions/cache@v4
@@ -23,5 +28,6 @@ jobs:
           key: cache-da9d1f5
           restore-keys: cache-da9d1f5
 
-      - name: Echo cache result
+      # Step 4: Echo cache result
+      - name: Echo cache hit/miss
         run: echo "Cache hit/miss: ${{ steps.prime-cache-da9d1f5.outputs.cache-hit }}"
