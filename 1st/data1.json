@@ -1,0 +1,7 @@
+{
+  "prompt": "A surreal and emotional image of human lungs formed from dense city buildings, one side intact and structured, the other side disintegrating into dark smoke and dust, tiny human silhouettes fading away within the collapsing structures, the air appears clear but the damage is severe, cinematic lighting, high detail, photorealistic, symbolic representation of invisible harm, no text, no labels",
+  "model": "Gemini 1.5 Pro (image generation)",
+  "dataset_name": "WHO Air Pollution Mortality Data",
+  "dataset_url": "https://www.who.int/data/gho/data/themes/air-pollution",
+  "insight": "Air pollution causes millions of deaths annually despite being largely invisible, making its impact dangerously underestimated."
+}
