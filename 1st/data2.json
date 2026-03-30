@@ -1,0 +1,6 @@
+{
+  "prompt": "A highly realistic scene inside a tailor shop, a mannequin wearing an extremely tight and perfectly fitted suit that contours unnaturally to every tiny detail of its body, while other mannequins nearby wear more comfortable, slightly loose suits, the overfitted suit looks rigid and impractical, warm lighting, photorealistic, no text, no labels",
+  "model": "Gemini 1.5 Pro (image generation)",
+  "concept": "overfitting",
+  "metaphor": "A suit tailored perfectly to one body but unusable for others represents a model that memorizes training data but fails to generalize."
+}
